@@ -33,6 +33,8 @@ gem 'devise', '~> 3.4.1'
 
 gem 'paperclip', '~> 4.2.1'
 
+gem 'masonry-rails', '~> 0.2.4'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
