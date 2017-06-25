@@ -3,7 +3,17 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-	$('#pins').imagesLoaded ->
+	$('#pins').isotope ->
 		$('#pins').masonry
 		  itemSelector: '.box'
 		  isFitWidth: true
+
+
+	$grid = $('#pins').isotope({})
+
+	$('.filter-button-group').on 'click', 'button', ->
+  		filterValue = $(this).attr('data-filter')
+  		$grid.isotope filter: filterValue
+  		return
+
+

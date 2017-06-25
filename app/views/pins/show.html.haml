@@ -3,17 +3,21 @@
 		.panel.panel-default
 			.panel-heading.pin_image
 				= image_tag @pin.image.url
-			.panel-body
+			.panel-body.text-center
 				%h1= @pin.title
+				%p= @pin.address
+				%p= @pin.hours
+				%p= @pin.link
 				%p.description= @pin.description
 			.panel-footer
 				.row
 					.col-md-6
 						%p.user
-							Submitted by
-							= @pin.user.email
+							/ Submitted by
+							/ = @pin.user.email
 					.col-md-6
 						.btn-group.pull-right
+
 							= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do
 								%span.glyphicon.glyphicon-heart
 								= @pin.get_upvotes.size

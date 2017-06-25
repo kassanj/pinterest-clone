@@ -1,8 +1,16 @@
+
+.button-group.filter-button-group#city-buttons
+	%button{class: 'btn btn-outline-primary', 'data-filter': '*'} Show All
+	%button{class: 'btn btn-outline-primary', 'data-filter': '.san_juan'} San Juan
+	%button{class: 'btn btn-outline-primary', 'data-filter': '.panama_city'} Panama City
+	%button{class: 'btn btn-outline-primary', 'data-filter': '.buenos_aires'} Buenos Aires
+	%button{class: 'btn btn-outline-primary', 'data-filter': '.mexico_city'} Mexico City
+	%button{class: 'btn btn-outline-primary', 'data-filter': '.santiago'} Santiago
+	%button{class: 'btn btn-outline-primary', 'data-filter': '.medillin'} Medillin
+	%button{class: 'btn btn-outline-primary', 'data-filter': '.montvideo'} Montevideo
+
 #pins.transitions-enabled
 	- @pins.each do |pin|
-		.box.panel.panel-default
+		.box.panel.panel-default{:class => pin.city.split.map(&:downcase).join('_')  }
 			= link_to (image_tag pin.image.url), pin
 			%h2= link_to pin.title, pin
-			%p.user
-				Submitted by
-				= pin.user.email

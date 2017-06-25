@@ -27,15 +27,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 nav {
-	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+	// box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
 	.navbar-brand {
 		a {
-			color: #BD1E23;
+			color: black;
 			font-weight: bold;
 			&:hover {
 				text-decoration: none;
 			}
 		}
+	}
+}
+
+#city-buttons {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	text-align: center;
+	.btn {
+		margin: auto 15px;
 	}
 }
 
