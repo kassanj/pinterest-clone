@@ -3,12 +3,14 @@
 		.panel.panel-default
 			.panel-heading.pin_image
 				= image_tag @pin.image.url
-			.panel-body.text-center
+			.panel-body.text-center#pin_values
 				%h1= @pin.title
-				%p= @pin.address
+				%p#pin-address= @pin.address
 				%p= @pin.hours
 				%p= @pin.link
 				%p.description= @pin.description
+			.panel-body#mapbox_view
+				#map-geocoding.map
 			.panel-footer
 				.row
 					.col-md-6
@@ -24,3 +26,32 @@
 							- if user_signed_in?
 								= link_to "Edit", edit_pin_path, class: "btn btn-default"
 								= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+
+
+
+%script{:type=>"text/javascript"}
+	
+	$(document).ready(function() {
+
+	var pinAddress = $("#pin-address").html();
+
+	L.mapbox.accessToken = "pk.eyJ1Ijoia2Fzc2FuZHJhbSIsImEiOiJjajRkMHBxOWEwZ2YxMzJydHV6bjdydHVvIn0.B1BbwVvXXRVei9FFgANoAA";
+	var geocoder = L.mapbox.geocoder('mapbox.places-v1');
+	var mapG = L.mapbox.map('map-geocoding', 'mapbox.streets');
+
+	geocoder.query(pinAddress, showMap);
+	
+	function showMap(err, data) {
+	if (err) throw err;
+	if (data.lbounds) {
+	mapG.fitBounds(data.lbounds);
+	var marker = L.marker([data.latlng[0], data.latlng[1]], 14).addTo(mapG);
+	} else if (data.latlng) {
+	mapG.setView([data.latlng[0], data.latlng[1]], 14);
+	}
+	}
+
+	});
+
+
+

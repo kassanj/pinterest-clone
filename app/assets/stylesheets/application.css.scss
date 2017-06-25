@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require mapbox
  *= require 'masonry/transitions'
  *= require_tree .
  *= require_self
@@ -40,6 +41,7 @@ nav {
 }
 
 #city-buttons {
+	position: relative;
 	margin-top: 40px;
 	margin-bottom: 40px;
 	text-align: center;
@@ -120,6 +122,21 @@ nav {
 		}
 	}
 }
+
+.panel-body#mapbox_view {
+	min-height: 400px;
+	overflow-y: auto;
+	padding: 0;
+	position: relative;
+}
+
+#map-geocoding {
+	position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+}
+
 
 textarea {
 	min-height: 250px;

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require mapbox.js
 //= require masonry/jquery.masonry
 //= require turbolinks
 //= require_tree .
