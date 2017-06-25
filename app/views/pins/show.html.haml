@@ -27,6 +27,8 @@
 								= link_to "Edit", edit_pin_path, class: "btn btn-default"
 								= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
 
+			
+
 
 
 %script{:type=>"text/javascript"}
@@ -45,9 +47,11 @@
 	if (err) throw err;
 	if (data.lbounds) {
 	mapG.fitBounds(data.lbounds);
-	var marker = L.marker([data.latlng[0], data.latlng[1]], 14).addTo(mapG);
+	mapG.setView([data.latlng[0], data.latlng[1]], 15);
+	var marker = L.marker([data.latlng[0], data.latlng[1]], 15).addTo(mapG);
 	} else if (data.latlng) {
-	mapG.setView([data.latlng[0], data.latlng[1]], 14);
+	var marker = L.marker([data.latlng[0], data.latlng[1]], 15).addTo(mapG);
+	mapG.setView([data.latlng[0], data.latlng[1]], 15);
 	}
 	}
 

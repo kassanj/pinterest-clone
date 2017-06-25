@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require mapbox.js
 //= require masonry/jquery.masonry
-//= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
