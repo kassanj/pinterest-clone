@@ -1,13 +1,15 @@
 !!! 5
 %html
 %head
-	%title Pin Board
+	%title Concept Shops
+	= favicon_link_tag '/images/favicon.ico'
 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
 	%link(href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css')
 	%link(href='https://fonts.googleapis.com/css?family=Playfair+Display:700|Work+Sans')
 	%script(src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js')
 	%script(src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js")
+	%script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js")      
 	= csrf_meta_tags
 %body
 	%nav.navbar.navbar-default

@@ -1,4 +1,4 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-6 col-md-offset-3">
   <div class="row">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -9,32 +9,32 @@
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= devise_error_messages! %>
 
-          <div class="form-group">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          <div class="input-field">
+            <label for="icon_prefix">Email</label>
+            <%= f.email_field :email, autofocus: true, id: "icon_prefix" %>
           </div>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
 
-          <div class="form-group">
-            <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+          <div class="input-field">
+            <label for="icon_prefix">Password <i>(leave blank if you don't want to change it)</i></label>
+            <%=  f.password_field :password, autocomplete: "off", id: "icon_prefix" %>
           </div>
 
-          <div class="form-group">
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+          <div class="input-field">
+            <label for="icon_prefix">Password Confirmation</label>
+            <%=  f.password_field :password_confirmation, autocomplete: "off", id: "icon_prefix" %>
           </div>
 
-          <div class="form-group">
-            <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-            <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+          <div class="input-field">
+             <label for="icon_prefix">Current Password <i>( we need your current password to confirm your changes)</i></label>
+            <%= f.password_field :current_password, autocomplete: "off", id: "icon_prefix" %>
           </div>
 
-          <div class="form-group">
-            <%= f.submit "Update", class: "" %>
+          <div class="input-field">
+            <%= f.submit "Update" %>
           </div>
         <% end %>
 
