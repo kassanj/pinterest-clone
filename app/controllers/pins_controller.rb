@@ -17,7 +17,7 @@ class PinsController < ApplicationController
     @pin = current_user.pins.build(pin_params)
 
     if @pin.save
-      redirect_to @pin, notice: "Successfully created new Pin"
+      redirect_to @pin, notice: "Successfully created new shop"
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class PinsController < ApplicationController
 
   def update
     if @pin.update(pin_params)
-      redirect_to @pin, notice: "Pin was Successfuly updated!"
+      redirect_to @pin, notice: "Shop was Successfuly updated!"
     else 
       render 'edit'
     end

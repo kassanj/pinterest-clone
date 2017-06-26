@@ -20,22 +20,42 @@
 @import "bootstrap";
 
 body {
-	background: #E9E9E9;
+	background: #FDFDF3;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 100;
+	font-weight: 600;
+	font-family: Avenir;
+	color: #2d288c;
+}
+
+p {
+	color: #2d288c;
+	font-family: 'Spectral', serif;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+}
+
+.navbar-default {
+  background-color: #2d288c !important;
+  border-color: #2d288c !important;
 }
 
 nav {
-	// box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+	font-family: Avenir;
+	font-weight: 600;
 	.navbar-brand {
 		a {
-			color: black;
+			color: #fff;
 			font-weight: bold;
 			&:hover {
 				text-decoration: none;
 			}
+		}
+		.navbar-nav > li > a {
+			color: #fff !important;
 		}
 	}
 }
@@ -68,7 +88,7 @@ nav {
 	  	margin: 0;
 	  	padding: 25px 10px;
 	  	a {
-			color: green;
+			color: #2d288c;
 	  	}
 	  }
 	  .user {
@@ -107,6 +127,7 @@ nav {
 			margin: 0 0 10px 0;
 		}
 		.description {
+			font-family: 'Spectral', serif;
 			color: #868686;
 			line-height: 1.75;
 			margin: 0;
@@ -121,6 +142,17 @@ nav {
 			padding-top: 8px;
 		}
 	}
+}
+
+button {
+	color: #2d288c;
+	radius: 0px !important;
+	background-color: transparent;
+	font-family: Avenir;
+	text-transform: uppercase;
+	font-weight: 600;
+	border: 2px solid #2d288c !important;
+	padding: 8px 20px;
 }
 
 .panel-body#mapbox_view {
