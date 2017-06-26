@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170625154908) do
+ActiveRecord::Schema.define(version: 20170626040330) do
 
   create_table "pins", force: :cascade do |t|
     t.string   "title"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170625154908) do
     t.string   "city"
     t.string   "link"
     t.string   "hours"
+    t.string   "permalink"
   end
 
   add_index "pins", ["user_id"], name: "index_pins_on_user_id"

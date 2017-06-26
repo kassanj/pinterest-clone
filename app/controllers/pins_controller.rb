@@ -44,6 +44,10 @@ class PinsController < ApplicationController
     redirect_to :back
   end
 
+  def saved
+    @pins = current_user.find_up_voted_items
+  end
+
 
   private
 

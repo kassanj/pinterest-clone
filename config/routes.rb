@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
   
   root "pins#index"
+
+  get '/saved_pins' => 'pins#saved', :as => 'saved_pins'
 end

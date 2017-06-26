@@ -5,20 +5,19 @@
 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
 	%link(href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css')
-	%link(href='https://fonts.googleapis.com/css?family=Roboto|Spectral:400,600')
-	
+	%link(href='https://fonts.googleapis.com/css?family=Playfair+Display:700|Work+Sans')
 	%script(src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js')
 	%script(src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js")
 	= csrf_meta_tags
-
 %body
 	%nav.navbar.navbar-default
 		.container
-			.navbar-brand= link_to "Shop Finder", root_path
+			.navbar-brand= link_to "Concept Shops", root_path
 
 			- if user_signed_in?
 				%ul.nav.navbar-nav.navbar-right
 					%li= link_to "Add A Shop", new_pin_path
+					%li= link_to "Saved", saved_pins_path
 					%li= link_to "Account", edit_user_registration_path
 					%li= link_to "Sign Out", destroy_user_session_path, method: :delete
 			- else

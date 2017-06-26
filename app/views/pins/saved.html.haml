@@ -1,0 +1,6 @@
+#pins.transitions-enabled
+	- @pins.each do |pin|
+		.box.panel.panel-default{:class => pin.city.split.map(&:downcase).join('_')  }
+			= link_to (image_tag pin.image.url), pin
+			%h2= link_to pin.title, pin
+
